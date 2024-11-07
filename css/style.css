@@ -1,0 +1,217 @@
+/* ベースのスタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-image: url('/img/wallpaper/wallpaper2.jpg');
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    width: 100vw; 
+    min-height: 100vh; /* スクロール対応 */
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    width: 100%;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    color: #e4002b;
+    text-shadow: 2px 2px 0 #000, 4px 4px 0 #fff;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    color: #fff;
+    opacity: 0.8;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 40px;
+    width: 80%;
+    margin:0 auto;
+  }
+  
+  /* パネルのスタイル */
+  .panel {
+    background-color: #1c1c1c;
+    padding: 40px;
+    width: 45%; /* 幅を調整して左右に寄せる */
+    border: 3px solid #e4002b;
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.6), 10px 10px 0 #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    transform: rotate(-2deg); /* デフォルトの傾き */
+    
+  }
+   /* 奇数番目のパネル（左寄せ、デフォルト方向） */
+  .panel:nth-child(odd) {
+    align-self: flex-start; /* 左寄せ */
+    transform: rotate(-3deg);
+  }
+
+  /* 偶数番目のパネル（右寄せ） */
+  .panel:nth-child(even) {
+    align-self: flex-end; /* 右寄せ */
+    transform: rotate(3deg);
+  }
+  
+  .panel:hover {
+    transform: translateY(-10px) scale(1.05); /* 少し浮かせて拡大 */
+    box-shadow: 12px 12px 0 rgba(255, 255, 255, 0.8), 15px 15px 0 #000;
+  }
+  
+  .panel h2 {
+    font-size: 2rem;
+    color: #e4002b;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 #000;
+  }
+  
+  .panel p {
+    color: #fff;
+    font-size: 1rem;
+  }
+  /* detailsとsummaryのスタイル */
+  .panel summary {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e4002b;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin: -20px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .panel[open] {
+    border-color: #f5c400; /* 展開時のボーダーカラー */
+  }
+  
+  .panel summary::marker {
+    content: ""; /* デフォルトのマーカーを削除 */
+  }
+  
+  /* 展開された詳細コンテンツ */
+  .panel p, .panel ul {
+    margin-top: 10px;
+    color: #fff;
+  }
+ 
+  
+
+/* Aboutセクションのスタイル */
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 左揃え */
+  padding-top: 60px; /* 画像分の余白を追加 */
+}
+
+.about img {
+  width: 175px; /* 適切なサイズに調整 */
+  position: absolute;
+  top: -40px; /* パネル内の上端からの位置 */
+  left: -30px; /* 左端からの位置 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* タイトルのスタイル調整 */
+.about h2 {
+  font-size: 1.5rem;
+  margin-top: 60px; /* 画像の高さ分だけ下げて調整 */
+  color: #e4002b;
+  text-align: left;
+}
+
+/* テキストのマージンを追加 */
+.about p {
+  margin-top: 20px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+  
+  
+  .projects {
+    border-color: #f5c400;
+  }
+  
+  .contact {
+    border-color: #00aaff;
+  }
+  
+  .sns-btn{
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .sns-btn li {
+    list-style-type: none; /* 点を非表示にする */
+  }
+  
+  .sns-btn img{
+    width: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+.bullet{
+  position:absolute;
+  width: 200px; /* 弾痕の大きさを調整 */
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: fadeOut 2s forwards; /* 2秒で消えるアニメーションを指定 */
+  }
+
+/* 弾痕が徐々に消えるアニメーション */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+  /* 小画面（768px以下）でのレスポンシブ対応 */
+  @media (max-width: 768px){
+    .panel {
+        align-self: center;
+        width: 100%;
+        flex-direction: column;
+        transform: rotate(0deg) !important; /* 小画面では傾きを解除 */
+    }
+    .content {
+      gap: 50px; /* 小画面用に余白を減らす */
+      padding: 20px; /* パディングも減らす */
+    }
+    
+    .about img {
+      width: 175px; /* 小画面では画像サイズを小さく */
+      top: -45px; /* はみ出しを抑えるため位置を調整 */
+      left: -20px;
+    }
+  }
