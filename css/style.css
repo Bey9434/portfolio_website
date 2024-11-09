@@ -110,7 +110,7 @@ body {
   display: none;
 }
 
-summary {
+.summary {
   list-style-type: none;
 }
 
