@@ -102,7 +102,7 @@ body {
 }
 
 .panel summary::marker {
-  content: "";
+  content: none;
 }
 
 /* 各セクションごとのスタイル */
