@@ -1,5 +1,7 @@
 document.body.addEventListener("click", drop, false);
 function drop(e) {
+
+    console.log("クリックされました", e.pageX, e.pageY);
     // 4つの弾痕画像のURLリスト
     const bulletImages = [
         '../img/effects/k0100_0.png',
@@ -23,6 +25,7 @@ function drop(e) {
 
     //アニメーションをする className を付ける
     bullet.className = "bullet";
+    
 
     //アニメーションが終わった事を感知してbulletを remove する
     bullet.addEventListener("animationend", function() {
