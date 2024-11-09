@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('/img/wallpaper/wallpaper2.jpg');
+  background-image: url('../img/wallpaper/wallpaper2.jpg');
   color: #fff;
   display: flex;
   flex-direction: column;
