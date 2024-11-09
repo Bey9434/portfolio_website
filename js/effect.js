@@ -1,7 +1,16 @@
 document.body.addEventListener("click", drop, false);
+document.body.addEventListener("touchstart", drop, false);  
 
 function drop(e) {
-    console.log("クリックされました", e.pageX, e.pageY);
+    let x, y;
+
+    if (e.type === "touchstart") {
+        x = e.touches[0].pageX;
+        y = e.touches[0].pageY;
+    } else {
+        x = e.pageX;
+        y = e.pageY;
+    }
 
     // 弾痕画像のURLリストを定義
     const bulletImages = [
@@ -13,11 +22,6 @@ function drop(e) {
 
     // ランダムに1つの画像URLを選択
     const randomImage = bulletImages[Math.floor(Math.random() * bulletImages.length)];
-    console.log("選択された画像URL:", randomImage); // URLを確認
-
-    // 座標の取得
-    const x = e.pageX;
-    const y = e.pageY;
 
     // 弾痕になるdivを生成
     const bullet = document.createElement("div");
