@@ -100,14 +100,14 @@ body {
 .panel[open] {
   border-color: #f5c400;
 }
-summary::marker {
+
+.panel summary::marker {
   content: none;
 }
 
-/* list-styleをnoneにしてマーカーを確実に消す */
-summary {
-  list-style-type: none;
-  display: list-item; /* Safari用 */
+summary::-webkit-details-marker {
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+  display: none;
 }
 
 /* 各セクションごとのスタイル */
