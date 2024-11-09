@@ -104,6 +104,9 @@ body {
 .panel summary::marker {
   content: none;
 }
+.panel summary::-webkit-details-marker {
+  content: none;
+}
 
 /* 各セクションごとのスタイル */
 .about summary {
