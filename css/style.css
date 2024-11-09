@@ -110,6 +110,10 @@ body {
   display: none;
 }
 
+summary {
+  list-style-type: none;
+}
+
 /* 各セクションごとのスタイル */
 .about summary {
   color: #fe002f;
