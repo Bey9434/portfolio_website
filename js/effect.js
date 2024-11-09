@@ -1,8 +1,9 @@
 document.body.addEventListener("click", drop, false);
-function drop(e) {
 
+function drop(e) {
     console.log("クリックされました", e.pageX, e.pageY);
-    // 4つの弾痕画像のURLリスト
+
+    // 弾痕画像のURLリストを定義
     const bulletImages = [
         `${baseurl}/img/effects/k0100_0.png`,
         `${baseurl}/img/effects/k0100_1.png`,
@@ -10,26 +11,25 @@ function drop(e) {
         `${baseurl}/img/effects/k0100_3.png`
     ];
 
-     // ランダムに1つの画像URLを選択
-     const randomImage = bulletImages[Math.floor(Math.random() * bulletImages.length)];
-    
-     console.log(randomImage); // 正しいパスが表示されているか確認
-    //座標の取得
-    var x = e.pageX;
-    var y = e.pageY;
+    // ランダムに1つの画像URLを選択
+    const randomImage = bulletImages[Math.floor(Math.random() * bulletImages.length)];
+    console.log("選択された画像URL:", randomImage); // URLを確認
 
-    //bulletになるdivの生成、座標の設定
-    var bullet = document.createElement("div");
+    // 座標の取得
+    const x = e.pageX;
+    const y = e.pageY;
+
+    // 弾痕になるdivを生成
+    const bullet = document.createElement("div");
     bullet.style.top = y + "px";
     bullet.style.left = x + "px";
     bullet.style.backgroundImage = `url(${randomImage})`; // ランダム画像を設定
     document.body.appendChild(bullet);
 
-    //アニメーションをする className を付ける
+    // アニメーションのクラスを設定
     bullet.className = "bullet";
-    
 
-    //アニメーションが終わった事を感知してbulletを remove する
+    // アニメーション終了後に要素を削除
     bullet.addEventListener("animationend", function() {
         this.parentNode.removeChild(this);
     }, false);
