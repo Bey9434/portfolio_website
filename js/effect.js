@@ -10,11 +10,10 @@ function drop(e) {
         `${baseurl}/img/effects/k0100_3.png`
     ];
 
-    console.log(randomImage); // 正しいパスが表示されているか確認
-
      // ランダムに1つの画像URLを選択
      const randomImage = bulletImages[Math.floor(Math.random() * bulletImages.length)];
-
+    
+     console.log(randomImage); // 正しいパスが表示されているか確認
     //座標の取得
     var x = e.pageX;
     var y = e.pageY;
