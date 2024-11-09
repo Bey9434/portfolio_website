@@ -4,10 +4,10 @@ function drop(e) {
     console.log("クリックされました", e.pageX, e.pageY);
     // 4つの弾痕画像のURLリスト
     const bulletImages = [
-        'img/effects/k0100_0.png',
-        'img/effects/k0100_1.png',
-        'img/effects/k0100_2.png',
-        'img/effects/k0100_3.png'
+        '{{ site.baseurl }}/img/effects/k0100_0.png',
+        '{{ site.baseurl }}/img/effects/k0100_1.png',
+        '{{ site.baseurl }}/img/effects/k0100_2.png',
+        '{{ site.baseurl }}/img/effects/k0100_3.png'
     ];
      // ランダムに1つの画像URLを選択
      const randomImage = bulletImages[Math.floor(Math.random() * bulletImages.length)];
