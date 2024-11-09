@@ -5,10 +5,10 @@ function drop(e) {
 
     // 弾痕画像のURLリストを定義
     const bulletImages = [
-        `${baseurl}/img/effects/k0100_0.png`,
-        `${baseurl}/img/effects/k0100_1.png`,
-        `${baseurl}/img/effects/k0100_2.png`,
-        `${baseurl}/img/effects/k0100_3.png`
+        `img/effects/k0100_0.png`,
+        `img/effects/k0100_1.png`,
+        `img/effects/k0100_2.png`,
+        `img/effects/k0100_3.png`
     ];
 
     // ランダムに1つの画像URLを選択
