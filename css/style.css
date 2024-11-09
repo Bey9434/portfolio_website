@@ -105,13 +105,9 @@ body {
   display: none;
 }
 
-.summary::-webkit-details-marker {
+.panel summary::-webkit-details-marker {
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
   display: none;
-}
-
-.summary {
-  list-style-type: none;
 }
 
 /* 各セクションごとのスタイル */
