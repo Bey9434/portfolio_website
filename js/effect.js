@@ -1,5 +1,4 @@
 document.body.addEventListener("click", drop, false);
-document.body.addEventListener("touchstart", drop, false);  
 
 function drop(e) {
     let x, y;
